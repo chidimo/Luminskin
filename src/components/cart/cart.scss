@@ -2,6 +2,10 @@
   padding: 15px;
   background-color: #f1f3ef;
 
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+
   .page-title {
     text-align: center;
     text-transform: uppercase;
@@ -18,6 +22,7 @@
     padding: 0;
     cursor: pointer;
     position: absolute;
+    font-size: 25px;
   }
 
   .image-container {

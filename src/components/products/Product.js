@@ -33,7 +33,9 @@ export const Product = (props) => {
         </p>
 
         <span
-          onClick={() => incrementCartItem(product.id)}
+          onClick={() => {incrementCartItem(product.id)
+            document.getElementById('overlay').style.width = "100%";
+          }}
           className="add-product-to-cart"
         >
           Add to cart

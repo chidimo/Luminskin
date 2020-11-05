@@ -18,7 +18,7 @@ export const CartItem = (props) => {
     <div className="cart-item">
       <>
         <div className="remove-item" onClick={() => removeItemFromCart(id)}>
-          <span>X</span>
+          <span>&times;</span>
         </div>
         <p>{title}</p>
 
