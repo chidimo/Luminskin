@@ -1,12 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import { App } from './App';
 import reportWebVitals from './reportWebVitals';
+
+import {
+  gql,
+  ApolloClient,
+  createHttpLink,
+  ApolloProvider,
+} from '@apollo/client';
+import { InMemoryCache } from '@apollo/client/cache';
+import { setContext } from '@apollo/client/link/context';
+
+import { queryCache } from './appCache/rootQueries';
+import { initCache } from './appCache/initCache';
+
+// For adding authentication
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+    },
+  };
+});
+
+const cache = new InMemoryCache();
+
+cache.writeQuery({
+  query: gql`
+    query queryLocalData { ${queryCache} }
+  `,
+  data: { ...initCache },
+});
+
+const httpLink = createHttpLink({
+  uri: 'https://pangaea-interviews.now.sh/api/graphql',
+});
+
+const appClient = new ApolloClient({
+  cache,
+  resolvers: {},
+  link: authLink.concat(httpLink),
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={appClient}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
