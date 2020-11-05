@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useDefaultCurrency } from '../../appCache/rootQueryHooks';
-import { useAddItemToCart } from './queryHooks';
+import { useAddItemToCart } from '../cart/queryHooks';
 
 export const Product = (props) => {
   const { product } = props;

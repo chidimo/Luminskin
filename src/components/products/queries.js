@@ -23,9 +23,3 @@ export const QUERY_PRODUCTS = gql`
     }
   }
 `;
-
-export const QUERY_CURRENCIES = gql`
-  query getCurrencies {
-    currency
-  }
-`;

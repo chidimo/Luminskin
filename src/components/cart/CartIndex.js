@@ -4,7 +4,7 @@ import {
   useDefaultCurrency,
 } from '../../appCache/rootQueryHooks';
 import { useGetProducts } from '../products/queryHooks';
-import { SelectCurrency } from '../products/SelectCurrency';
+import { SelectCurrency } from './SelectCurrency';
 import { CartItem } from './CartItem';
 
 export const CartIndex = () => {
