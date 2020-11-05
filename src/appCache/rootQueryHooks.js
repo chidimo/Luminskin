@@ -6,7 +6,7 @@ export const useCartItems = () => {
   return { cartItems: data.cartItems };
 };
 
-export const useDefaultCurrency = () => {
+export const useSavedCurrency = () => {
   const { data } = useQuery(QUERY_ROOT);
-  return { defaultCurrency: data.defaultCurrency };
+  return { queryCurrency: data.queryCurrency };
 };

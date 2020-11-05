@@ -1,15 +1,11 @@
 import React from 'react';
 
 import { Product } from './Product';
-import { useGetProducts } from './queryHooks';
-import { useDefaultCurrency } from '../../appCache/rootQueryHooks';
 import './products.scss';
+import { useProductState } from '../../appContext/useProduct';
 
-const ProductIndex = () => {
-  const { defaultCurrency } = useDefaultCurrency();
-  const { products, gettingProducts } = useGetProducts({
-    curr: defaultCurrency,
-  });
+export const ProductIndex = () => {
+  const { products, gettingProducts } = useProductState();
 
   return (
     <div className="index-page">
@@ -21,7 +17,7 @@ const ProductIndex = () => {
         <p>Getting products</p>
       ) : (
         <div className="products-list">
-          {products.slice(0, 3).map((pr) => {
+          {products.slice(0, 2).map((pr) => {
             return <Product key={pr.id} product={pr} />;
           })}
         </div>

@@ -14,12 +14,12 @@ product_options {
 `;
 
 export const QUERY_PRODUCTS = gql`
-  query getProducts($curr: Currency) {
+  query getProducts($currency: Currency) {
     products {
       id
       title
       image_url
-      price(currency: $curr)
+      price(currency: $currency)
     }
   }
 `;

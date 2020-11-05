@@ -15,6 +15,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import { queryCache } from './appCache/rootQueries';
 import { initCache } from './appCache/initCache';
+import { ProductProvider } from './appContext/ProductCtx';
 
 // For adding authentication
 const authLink = setContext((_, { headers }) => {
@@ -47,7 +48,9 @@ const appClient = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={appClient}>
-      <App />
+      <ProductProvider>
+        <App />
+      </ProductProvider>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

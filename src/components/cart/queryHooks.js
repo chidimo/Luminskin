@@ -12,7 +12,7 @@ export const useGetCurrencies = ({ fetchPolicy = 'network-only' } = {}) => {
   return {
     error,
     gettingCurrencies: loading,
-    currency: data?.currency || [],
+    currencies: data?.currency || [],
   };
 };
 

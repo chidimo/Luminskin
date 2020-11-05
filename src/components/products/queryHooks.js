@@ -3,11 +3,11 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from './queries';
 
 export const useGetProducts = ({
-  curr = 'NGN',
+  queryCurrency = 'NGN',
   fetchPolicy = 'network-only',
 } = {}) => {
   const { loading, error, data } = useQuery(QUERY_PRODUCTS, {
-    variables: { curr },
+    variables: { currency: queryCurrency },
     fetchPolicy,
   });
 

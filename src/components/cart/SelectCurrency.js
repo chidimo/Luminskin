@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useApolloClient } from '@apollo/client';
 
-import { useGetCurrencies } from './queryHooks';
 import { DEFAULT_CURRENCY } from '../../storageKeys';
+import { useSavedCurrencyState } from '../../appContext/useProduct';
 
 export const SelectCurrency = (props) => {
   const { value } = props;
   const { cache } = useApolloClient();
-  const { currency } = useGetCurrencies();
+  const { currencies } = useSavedCurrencyState();
 
   return (
     <div>
@@ -20,13 +20,13 @@ export const SelectCurrency = (props) => {
           localStorage.setItem(DEFAULT_CURRENCY, JSON.stringify(value));
           cache.modify({
             fields: {
-              defaultCurrency: () => value,
+              queryCurrency: () => value,
             },
           });
         }}
       >
         <option value="">Currency</option>
-        {currency?.map((cu) => {
+        {currencies?.map((cu) => {
           return (
             <option key={cu} value={cu}>
               {cu}

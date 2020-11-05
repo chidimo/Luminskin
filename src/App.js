@@ -1,25 +1,15 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { CartIndex } from './components/cart/CartIndex';
 
 import { ErrorBoundary } from './ErrorBoundary';
 
-const ProductIndex = React.lazy(() =>
-  import('./components/products/ProductIndex')
-);
+const HomePage = React.lazy(() => import('./HomePage'));
 
 export const App = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <ErrorBoundary>
       <React.Suspense fallback={() => <p>Loading app</p>}>
-        <ErrorBoundary>
-          <Switch>
-            <Route path={'/'} component={ProductIndex} />
-          </Switch>
-
-          <CartIndex />
-        </ErrorBoundary>
+        <HomePage />
       </React.Suspense>
-    </BrowserRouter>
+    </ErrorBoundary>
   );
 };
