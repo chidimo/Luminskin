@@ -3,7 +3,6 @@ import React from 'react';
 import { Product } from './Product';
 import { useGetProducts } from './queryHooks';
 import { useDefaultCurrency } from '../../appCache/rootQueryHooks';
-
 import './products.scss';
 
 const ProductIndex = () => {
@@ -22,7 +21,7 @@ const ProductIndex = () => {
         <p>Getting products</p>
       ) : (
         <div className="products-list">
-          {products.map((pr) => {
+          {products.slice(0, 3).map((pr) => {
             return <Product key={pr.id} product={pr} />;
           })}
         </div>

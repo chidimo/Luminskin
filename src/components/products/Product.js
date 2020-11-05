@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { useDefaultCurrency } from '../../appCache/rootQueryHooks';
-import { useAddItemToCart } from '../cart/queryHooks';
+import { useUpdateCart } from '../cart/queryHooks';
 
 export const Product = (props) => {
   const { product } = props;
   const { defaultCurrency } = useDefaultCurrency();
   const { title, image_url, price } = product;
 
-  const { addToCart } = useAddItemToCart();
+  const { incrementCartItem } = useUpdateCart();
 
   return (
     <div className="product">
@@ -25,7 +25,7 @@ export const Product = (props) => {
         </p>
 
         <span
-          onClick={() => addToCart(product)}
+          onClick={() => incrementCartItem(product.id)}
           className="add-product-to-cart"
         >
           Add to cart

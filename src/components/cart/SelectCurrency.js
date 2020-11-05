@@ -13,7 +13,7 @@ export const SelectCurrency = (props) => {
   return (
     <div>
       <select
-        className=""
+        className="select-currency"
         value={value}
         onChange={(e) => {
           const { value } = e.target;

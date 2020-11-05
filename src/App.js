@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { CartIndex } from './components/cart/CartIndex';
 
 import { ErrorBoundary } from './ErrorBoundary';
 
@@ -15,6 +16,8 @@ export const App = () => {
           <Switch>
             <Route path={'/'} component={ProductIndex} />
           </Switch>
+
+          <CartIndex />
         </ErrorBoundary>
       </React.Suspense>
     </BrowserRouter>
