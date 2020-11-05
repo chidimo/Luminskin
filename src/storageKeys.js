@@ -1,0 +1,2 @@
+export const CART_ITEMS = 'CART_ITEMS';
+export const DEFAULT_CURRENCY = 'DEFAULT_CURRENCY';
