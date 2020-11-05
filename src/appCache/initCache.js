@@ -7,4 +7,5 @@ const savedCurr = JSON.parse(localStorage.getItem(DEFAULT_CURRENCY));
 export const initCache = {
   cartItems: cart || [],
   queryCurrency: savedCurr || 'NGN',
+  refreshingCurrency: false,
 };

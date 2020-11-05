@@ -21,6 +21,7 @@ export const SelectCurrency = (props) => {
           cache.modify({
             fields: {
               queryCurrency: () => value,
+              refreshingCurrency: () => true,
             },
           });
         }}

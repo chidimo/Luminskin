@@ -3,8 +3,10 @@ import React from 'react';
 import { Product } from './Product';
 import './products.scss';
 import { useProductState } from '../../appContext/useProduct';
+import { useRefreshingCurrency } from '../../appCache/rootQueryHooks';
 
 export const ProductIndex = () => {
+  const { refreshingCurrency } = useRefreshingCurrency();
   const { products, gettingProducts } = useProductState();
 
   return (
@@ -13,11 +15,11 @@ export const ProductIndex = () => {
         <p>All Products</p>
       </div>
 
-      {gettingProducts ? (
+      {gettingProducts && !refreshingCurrency ? (
         <p>Getting products</p>
       ) : (
         <div className="products-list">
-          {products.slice(0, 2).map((pr) => {
+          {products.map((pr) => {
             return <Product key={pr.id} product={pr} />;
           })}
         </div>

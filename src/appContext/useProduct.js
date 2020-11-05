@@ -13,7 +13,9 @@ export const useProductState = () => {
 export const useSavedCurrencyState = () => {
   const ctx = React.useContext(CurrencyStateCtx);
   if (ctx === undefined) {
-    throw new Error('useSavedCurrencyState must be used within a FeaturesProvider');
+    throw new Error(
+      'useSavedCurrencyState must be used within a FeaturesProvider'
+    );
   }
   return ctx;
 };
