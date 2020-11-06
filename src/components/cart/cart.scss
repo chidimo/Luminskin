@@ -1,9 +1,16 @@
 .cart-index {
   padding: 0 20px;
   background-color: #f1f3ef;
-  width: 400px;
+  width: 80%;
   height: 100vh;
-  margin-left: auto;
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .cart-index {
+    width: 400px;
+    margin-right: 0;
+  }
 }
 
 .cart-index-header {
