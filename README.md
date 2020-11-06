@@ -12,7 +12,7 @@ I found some of the currencies to be buggy when I try to use them to retrieve pr
 
 `"Float cannot represent non numeric value: "NaN""`
 
-There may be others but these are ones I was able to catch
+There may be others but these are ones I was able to catch. I took the immediate measure of filtering them out from the list of currencies.
 
 ## How to run project
 

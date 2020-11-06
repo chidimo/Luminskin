@@ -12,7 +12,8 @@ export const useGetCurrencies = ({ fetchPolicy = 'network-only' } = {}) => {
   return {
     error,
     gettingCurrencies: loading,
-    currencies: data?.currency || [],
+    currencies:
+      data?.currency.filter((cu) => cu !== 'AED' && cu !== 'SAR') || [],
   };
 };
 
