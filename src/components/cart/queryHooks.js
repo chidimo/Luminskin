@@ -30,7 +30,7 @@ export const useUpdateCart = () => {
   };
 
   const incrementCartItem = (itemId) => {
-    // each cart item has the structure {id, quantity, item}
+    // each cart item has the structure {id, quantity,}
 
     let updatedCart;
     const itemIds = cartItems.map((it) => it.id);

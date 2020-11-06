@@ -10,11 +10,7 @@ export const ProductIndex = () => {
   const { products, gettingProducts } = useProductState();
 
   return (
-    <div className="index-page">
-      <div className="product-index">
-        <p>All Products</p>
-      </div>
-
+    <div className="">
       {gettingProducts && !refreshingCurrency ? (
         <p>Getting products</p>
       ) : (

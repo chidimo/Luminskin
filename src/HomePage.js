@@ -7,6 +7,10 @@ import './homepage.scss';
 const HomePage = () => {
   return (
     <>
+    <div className="product-homepage">
+        <p>All Products</p>
+      </div>
+
       <ProductIndex />
 
       <div id="overlay" className="overlay">

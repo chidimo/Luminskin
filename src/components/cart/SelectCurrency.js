@@ -11,9 +11,9 @@ export const SelectCurrency = (props) => {
   const { currencies } = useSavedCurrencyState();
 
   return (
-    <div>
+    <div className="select-currency">
       <select
-        className="select-currency"
+        className=""
         value={value}
         onChange={(e) => {
           const { value } = e.target;

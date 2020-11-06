@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {
-  useRefreshingCurrency,
   useSavedCurrency,
+  useRefreshingCurrency,
 } from '../../appCache/rootQueryHooks';
 import { useUpdateCart } from '../cart/queryHooks';
 
@@ -28,7 +28,7 @@ export const Product = (props) => {
           {refreshingCurrency ? (
             <span>Updating currency</span>
           ) : (
-            <span>{`From ${queryCurrency} ${price}`} </span>
+            <span>{`From ${queryCurrency} ${price}`}</span>
           )}
         </p>
 
