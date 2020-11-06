@@ -21,15 +21,15 @@ export const Product = (props) => {
         <div className="product-image">
           <img src={image_url} alt={title} />
         </div>
-        <p>{title}</p>
+        <p className="product-name small-text">{title}</p>
       </div>
 
       <div>
-        <p>
+        <p className="product-price small-text">
           {refreshingCurrency ? (
             <span>Updating currency</span>
           ) : (
-            <span>{formatPrice(price, queryCurrency)}</span>
+            <span>From {formatPrice(price, queryCurrency)}</span>
           )}
         </p>
 
