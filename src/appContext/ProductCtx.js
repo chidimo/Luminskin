@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useGetProducts } from '../components/products/queryHooks';
+import { useGetProducts } from '../components/products/productHooks';
 import { useSavedCurrency } from '../appCache/rootQueryHooks';
-import { useGetCurrencies } from '../components/cart/queryHooks';
+import { useGetCurrencies } from '../components/cart/cartHooks';
 
 export const ProductStateCtx = React.createContext();
 export const CurrencyStateCtx = React.createContext();

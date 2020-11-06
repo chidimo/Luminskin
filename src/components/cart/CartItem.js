@@ -3,7 +3,7 @@ import {
   useRefreshingCurrency,
   useSavedCurrency,
 } from '../../appCache/rootQueryHooks';
-import { useUpdateCart } from './queryHooks';
+import { useUpdateCart } from './cartHooks';
 
 export const CartItem = (props) => {
   const {
