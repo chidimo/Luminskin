@@ -8,26 +8,22 @@ export const useGetProducts = ({
   fetchPolicy = 'network-only',
 } = {}) => {
   const { cache } = useApolloClient();
-  const { loading, error, data, called } = useQuery(QUERY_PRODUCTS, {
+
+  const { loading, error, data } = useQuery(QUERY_PRODUCTS, {
     variables: { currency: queryCurrency },
     fetchPolicy,
   });
 
   React.useEffect(() => {
-    if (called && !loading) {
+    if (data?.products) {
       cache.modify({
         fields: {
+          initLoading: () => false,
           refreshingCurrency: () => false,
         },
       });
-    } else {
-      cache.modify({
-        fields: {
-          refreshingCurrency: () => true,
-        },
-      });
     }
-  }, [cache, called, loading]);
+  }, [cache, data?.products]);
 
   return {
     error,

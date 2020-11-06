@@ -1,18 +1,21 @@
 import React from 'react';
 
 import { Product } from './Product';
-import './products.scss';
 import { useProductState } from '../../appContext/useProduct';
-import { useRefreshingCurrency } from '../../appCache/rootQueryHooks';
+import { useInitLoading } from '../../appCache/rootQueryHooks';
+
+import './products.scss';
 
 export const ProductIndex = () => {
-  const { refreshingCurrency } = useRefreshingCurrency();
+  const { initLoading } = useInitLoading();
   const { products, gettingProducts } = useProductState();
 
   return (
     <div className="">
-      {gettingProducts && !refreshingCurrency ? (
-        <p>Getting products</p>
+      {gettingProducts && initLoading ? (
+        <div className="product-index-loader">
+          <p>Getting products</p>
+        </div>
       ) : (
         <div className="products-list">
           {products.map((pr) => {

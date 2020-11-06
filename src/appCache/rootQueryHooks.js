@@ -15,3 +15,8 @@ export const useRefreshingCurrency = () => {
   const { data } = useQuery(QUERY_ROOT);
   return { refreshingCurrency: data.refreshingCurrency };
 };
+
+export const useInitLoading = () => {
+  const { data } = useQuery(QUERY_ROOT);
+  return { initLoading: data.initLoading };
+};

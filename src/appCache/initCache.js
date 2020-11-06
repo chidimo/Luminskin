@@ -8,4 +8,5 @@ export const initCache = {
   cartItems: cart || [],
   queryCurrency: savedCurr || 'NGN',
   refreshingCurrency: false,
+  initLoading: true,
 };
