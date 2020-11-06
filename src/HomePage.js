@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <div className="product-homepage">
-        <p className="page-header">All Products</p>
+        <p className="page-header">All Luminskin Products</p>
 
         <button
           className="show-cart"

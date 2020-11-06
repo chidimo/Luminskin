@@ -1,4 +1,4 @@
-# Lumiskin
+# Luminskin
 
 ## Style note.
 
