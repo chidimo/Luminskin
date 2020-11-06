@@ -7,8 +7,17 @@ import './homepage.scss';
 const HomePage = () => {
   return (
     <>
-    <div className="product-homepage">
-        <p>All Products</p>
+      <div className="product-homepage">
+        <p className="page-header">All Products</p>
+
+        <button
+          className="show-cart"
+          onClick={() => {
+            document.getElementById('overlay').style.width = '100%';
+          }}
+        >
+          View cart
+        </button>
       </div>
 
       <ProductIndex />

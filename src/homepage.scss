@@ -1,5 +1,21 @@
 .product-homepage {
   padding: 50px 100px;
+
+  .page-header {
+    font-size: 30px;
+  }
+
+  .show-cart {
+    cursor: pointer;
+  }
+}
+
+hr {
+  margin: 0;
+}
+
+button {
+  padding: 10px;
 }
 
 .overlay {

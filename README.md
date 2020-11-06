@@ -9,3 +9,9 @@ Every component in the app is written as a function except the `<ErrorBoundary /
 `"Float cannot represent non numeric value: "NaN""`
 
 `AED`, `SAR`
+
+## How to run project
+
+1. Clone or download repository
+1. `cd` into the top level folder on a terminal and run `yarn install` or `npm install` if you prefer.
+1. Wait for the installation to finish then run `yarn start` or `npm start`.

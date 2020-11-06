@@ -4,6 +4,7 @@ import {
   useSavedCurrency,
   useRefreshingCurrency,
 } from '../../appCache/rootQueryHooks';
+import { formatPrice } from '../../utils';
 import { useUpdateCart } from '../cart/cartHooks';
 
 export const Product = (props) => {
@@ -28,7 +29,7 @@ export const Product = (props) => {
           {refreshingCurrency ? (
             <span>Updating currency</span>
           ) : (
-            <span>{`From ${queryCurrency} ${price}`}</span>
+            <span>{formatPrice(price, queryCurrency)}</span>
           )}
         </p>
 

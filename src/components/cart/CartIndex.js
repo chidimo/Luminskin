@@ -4,6 +4,7 @@ import { SelectCurrency } from './SelectCurrency';
 import { CartItem } from './CartItem';
 import './cart.scss';
 import { useProductState } from '../../appContext/useProduct';
+import { formatPrice } from '../../utils';
 
 export const CartIndex = () => {
   const { cartItems } = useCartItems();
@@ -55,11 +56,14 @@ export const CartIndex = () => {
       </div>
 
       <div className="cart-summary">
+        <hr />
         <div className="total-amount">
           <p>Subtotal</p>
-          <p>{subTotal}</p>
+          <p>{formatPrice(subTotal, queryCurrency)}</p>
         </div>
-        <button>Proceed to checkout</button>
+
+        <hr />
+        <button className="btn-checkout">Proceed to checkout</button>
       </div>
     </div>
   );

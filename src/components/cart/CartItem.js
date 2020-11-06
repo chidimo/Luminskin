@@ -4,6 +4,7 @@ import {
   useSavedCurrency,
 } from '../../appCache/rootQueryHooks';
 import { useUpdateCart } from './cartHooks';
+import { formatPrice } from '../../utils';
 
 export const CartItem = (props) => {
   const {
@@ -20,34 +21,43 @@ export const CartItem = (props) => {
 
   return (
     <div className="cart-item">
-      <>
-        <div className="remove-item" onClick={() => removeItemFromCart(id)}>
-          <span>&times;</span>
+      <div className="remove-item" onClick={() => removeItemFromCart(id)}>
+        <span>&times;</span>
+      </div>
+
+      <div className="item-details">
+        <div className="">
+          <p>{title}</p>
+
+          <div className="quantity-control">
+            <span
+              className="control-left"
+              onClick={() => decrementCartItem(id)}
+            >
+              -
+            </span>
+            <span className="">{quantity}</span>
+            <span
+              className="control-right"
+              onClick={() => incrementCartItem(id)}
+            >
+              +
+            </span>
+          </div>
         </div>
-        <p>{title}</p>
 
         <p>
           {refreshingCurrency ? (
             <span>Updating currency</span>
           ) : (
-            <span>{`${queryCurrency} ${price}`}</span>
+            <span>{formatPrice(price, queryCurrency)}</span>
           )}
         </p>
 
         <div className="image-container">
           <img src={image_url} alt={title} />
         </div>
-
-        <div className="quantity-control">
-          <span className="control-left" onClick={() => decrementCartItem(id)}>
-            -
-          </span>
-          <span className="">{quantity}</span>
-          <span className="control-right" onClick={() => incrementCartItem(id)}>
-            +
-          </span>
-        </div>
-      </>
+      </div>
     </div>
   );
 };
