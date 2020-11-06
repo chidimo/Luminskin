@@ -18,6 +18,9 @@ export const SelectCurrency = (props) => {
         onChange={(e) => {
           const { value } = e.target;
           localStorage.setItem(DEFAULT_CURRENCY, JSON.stringify(value));
+
+          if (value === '') return;
+
           cache.modify({
             fields: {
               queryCurrency: () => value,
