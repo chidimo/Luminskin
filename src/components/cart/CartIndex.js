@@ -12,6 +12,14 @@ export const CartIndex = () => {
 
   return (
     <div className="cart-index">
+      <div
+        className="close-cart"
+        onClick={() => {
+          document.getElementById('overlay').style.width = '0';
+        }}
+      >
+        <span>&#62;</span>
+      </div>
       <div>
         <p className="page-title">your cart</p>
       </div>

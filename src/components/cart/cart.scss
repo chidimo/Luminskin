@@ -2,9 +2,24 @@
   padding: 15px;
   background-color: #f1f3ef;
 
-  width: 50%;
+  width: 40%;
   height: 100%;
   margin-left: auto;
+
+  .close-cart {
+    padding: 15px;
+    background-color: lightblue;
+    width: 10px;
+    height: 10px;
+    /* text-align: center; */
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
   .page-title {
     text-align: center;
