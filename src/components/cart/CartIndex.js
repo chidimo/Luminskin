@@ -38,21 +38,27 @@ export const CartIndex = () => {
       <SelectCurrency value={queryCurrency} />
 
       <div className="selected-items">
-        {cartItems.map((it) => {
-          const product = products.filter((p) => p.id === it.id)[0];
-          if (product) {
-            return (
-              <CartItem
-                key={it.id}
-                cartEntry={it}
-                product={product}
-                gettingProducts={gettingProducts}
-              />
-            );
-          } else {
-            return null;
-          }
-        })}
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty</p>
+        ) : (
+          <>
+            {cartItems.map((it) => {
+              const product = products.filter((p) => p.id === it.id)[0];
+              if (product) {
+                return (
+                  <CartItem
+                    key={it.id}
+                    cartEntry={it}
+                    product={product}
+                    gettingProducts={gettingProducts}
+                  />
+                );
+              } else {
+                return null;
+              }
+            })}
+          </>
+        )}
       </div>
 
       <div className="cart-summary">

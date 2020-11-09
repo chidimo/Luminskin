@@ -1,6 +1,8 @@
 # Luminskin
 
-## Style note.
+Live application url <https://luminskin-nu.vercel.app/>
+
+## Style note
 
 Every component in the app is written as a function except the `<ErrorBoundary />` component which can only be written as a class component. [See here](https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries).
 
